@@ -1,0 +1,23 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+
+{% for product in products %}
+    <div class="card" style="padding: 10px 20px;margin-bottom: 30px;">
+      <table class="table mb-0">
+          <div style="padding-bottom: 1px;margin-bottom: 15px;border-bottom: 1px solid #e3e3e3">
+            <p><a href=" #" style="color:#007bff;font-size:19px">{{product.productname}}</a> <span class="text-muted" style="float:right;font-size:15px">{{product.fpo.user}}</span></p>
+          </div>
+          <h4 style="color: #444444;" class="align-middle">Description:{{ product.description }}</a></h4>
+          <h4 style="color: #444444;" class="align-middle">Quantity:{{ product.quantity }}</a></h4>
+          <h4 style="color: #444444;" class="align-middle">expected price{{ product.expectedprice }}</a></h4>
+            <h4 style="color: #444444;" class="align-middle">contact{{ product.fpo.phone_number }}</a></h4>
+          <div class="text">
+          </div>
+      </table>
+    </div>
+{% empty %}
+  <tr>
+    <td class="bg-light text-center font-italic" colspan="5">You haven't created any post yet.</td>
+  </tr>
+{% endfor %} 
+ {% endblock %}
